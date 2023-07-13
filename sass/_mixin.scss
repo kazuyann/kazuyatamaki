@@ -1,0 +1,12 @@
+$breakpoint: (
+  // pc:
+  tab: 'screen and (max-width: 960px)',
+  sp: 'screen and (max-width: 560px)'
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+   @content;
+  }
+}
+

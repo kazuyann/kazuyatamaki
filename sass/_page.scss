@@ -1,0 +1,658 @@
+@use 'import' as m;
+/*---------------------------
+main
+----------------------------*/
+.main {
+  background-image: url(../img/circle-min.png);
+  background-position: top -30px right -130px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: relative;
+  @include m.mq(tab) {
+    background-position: top -70px right -200px;
+  }
+  @include m.mq(sp) {
+    background-position: top 40% right 50%;
+  }
+  &-inner {
+    max-width: 1022px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 253px 20px 155px;
+    @include m.mq(tab) {
+      padding: 165px 20px 155px;
+    }
+    @include m.mq(sp) {
+      padding: 165px 20px 100px;
+    }
+  }
+  
+  &-copy {                  
+    text-align: left;
+    @include m.mq(sp) {
+      text-align: center;
+    }
+    h2 {
+      font-size: 3.2rem;
+      line-height: 1.4;
+      margin-bottom: 44px;
+      font-weight: bold;
+      @include m.mq(tab) {
+        font-size: 2.7rem;
+      }
+      @include m.mq(sp) {
+        margin-bottom: 30px;
+      }
+    }
+    
+    p {
+      margin-bottom: 53px;
+      line-height: 1.5;
+      font-weight: bold;
+      @include m.mq(sp) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+  
+  &-img {
+    position: absolute;
+    top: 29%;
+    left: 49%;
+    z-index: 1000;
+    @include m.mq(tab) {
+      position: absolute;
+      top: 32%;
+      right: 2%;
+    }
+    @include m.mq(sp) {
+      position: static;
+      text-align: center;
+      img {
+        width: 60%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+  
+/*---------------------------
+feature
+----------------------------*/
+#feature {
+  padding: 71px 20px 154px;
+  @include m.mq(tab) {
+    padding: 70px 20px 90px;
+    br {
+      display: none;
+    }
+  }
+  .feature-title {
+    margin-bottom: 57px;
+    font-size: 3.2rem;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: bold;
+    @include m.mq(sp) {
+      margin-bottom: 35px;
+      font-size: 3rem;
+    }
+    br {
+      display: none;
+      @include m.mq(sp) {
+        display: block;
+      }
+    }
+    span {
+      color: m.$sub-ttl-color;
+      display: block;
+      margin-top: 10px;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+  }
+  
+  .feature-inner {
+    max-width: 1022px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .feature-heading {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 60px;  //バラバラ
+    font-weight: bold;
+    @include m.mq(sp) {
+      margin-bottom: 50px;  
+    }
+  }
+  
+  .feature-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 88px; //バラバラ
+    @include m.mq(tab) {
+      width: 100%;
+    }
+    @include m.mq(sp) {
+      flex-direction: column;
+      &:nth-of-type(2) {
+        flex-direction: column-reverse;
+      } 
+    }
+    .feature-text {
+      @include m.mq(tab) {
+        width: 50%;
+      }
+      @include m.mq(sp) {
+        width: 100%;
+      }
+    }
+    h4 {
+      font-size: 2.4rem;
+      line-height: 2;
+      margin-bottom: 40px; //バラバラ
+      font-weight: bold;
+      @include m.mq(tab) {
+        font-size: 2.2rem;
+      }
+    }
+    p {
+      line-height: 1.6;
+      font-weight: bold;
+    }
+  }
+
+  .feature-box:last-child {
+    margin-bottom: 0;
+  }
+
+  .feature-img {
+    padding-right: 30px;
+    @include m.mq(tab) {
+      padding-right: 30px;
+      width: 50%;
+    }
+    @include m.mq(sp) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  .feature-img:nth-child(2) {
+    padding-right: 0;
+    padding-left: 30px;
+  }
+}
+
+/*---------------------------
+price
+----------------------------*/
+#price {
+  background-color: m.$bg-color;
+  padding: 55px 20px 68px;
+  @include m.mq(tab) {
+    padding: 60px 20px 90px;
+  }
+  .price-title {
+    margin-bottom: 70px;
+    font-size: 3.2rem;
+    text-align: center;
+    font-weight: bold;
+    @include m.mq(sp) {
+      margin-bottom: 35px;
+      font-size: 3rem;
+    }
+    span {
+      color: m.$sub-ttl-color;
+      display: block;
+      margin-top: 11px;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+  }
+
+  .price-inner {
+    max-width: 926px;
+    margin-left: auto;
+    margin-right: auto;
+    p {
+      text-align: center;
+      margin-top: 36px;
+      line-height: 1.6;
+      font-weight: bold;
+      @include m.mq(sp) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .price-table {
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    background-color: #fff;
+    border-collapse: collapse;
+    th {
+      width: 31%;
+      padding: 35px 19px;
+      // min-width: 289px;
+      border: solid 1px #E5E5E5;
+      line-height: 1.75;
+      font-weight: bold;
+      @include m.mq(tab) {
+        text-align: left;
+      }
+      @include m.mq(sp) {
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 30px 20px;
+      }
+    }
+    td {
+      width: 69%;
+      text-align: left;
+      padding: 35px 30px;
+      border: solid 1px #E5E5E5;
+      line-height: 1.75;
+      font-weight: bold;
+      @include m.mq(sp) {
+        text-align: center;
+        width: 100%;
+        display: block;
+        padding: 30px 20px;
+      }
+    }
+  }
+}
+
+/*---------------------------
+faq
+----------------------------*/
+.faq {
+  background-color: #fff;
+  padding: 55px 20px 86px;
+  @include m.mq(tab) {
+    padding: 60px 20px 90px;
+    br {
+      display: none;
+    }
+  }
+  &-title {
+    margin-bottom: 32px;
+    font-size: 3.2rem;
+    text-align: center;
+    font-weight: bold;
+    @include m.mq(sp) {
+      margin-bottom: 35px;
+      font-size: 3rem;
+    }
+    span {
+      color: m.$sub-ttl-color;
+      display: block;
+      margin-top: 11px;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+  }
+
+  &-inner {
+    max-width: 907px;
+    margin-left: auto;
+    margin-right: auto;
+    @include m.mq(sp) {
+      width: 100%;
+    }
+  }
+
+  &-accordion {
+    .accordion-item {
+      border: 1px solid #E5E5E5;
+      cursor: pointer;
+      dt {
+        border-bottom: 1px solid #E5E5E5;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 1.9;
+        font-weight: bold;
+      }
+      dd {
+        display: none;
+        background-color: m.$faq-bg-color;
+        padding: 24px 84px 26px 37px;
+        font-size: 1.4rem;
+        line-height: 1.9;
+        font-weight: bold;
+        @include m.mq(tab) {
+          padding: 20px
+        }
+        &.is-open {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------
+blog
+----------------------------*/
+.blog {
+  background-color: m.$bg-color;
+  padding: 55px 20px 91px;
+  @include m.mq(tab) {
+    padding: 60px 20px 90px;
+  }
+  &-title {
+    margin-bottom: 54px;
+    font-size: 3.2rem;
+    text-align: center;
+    @include m.mq(sp) {
+      margin-bottom: 35px;
+      font-size: 3rem;
+    }
+    span {
+      color: m.$sub-ttl-color;
+      display: block;
+      margin-top: 11px;
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+  }
+
+  &-inner {
+    max-width: 1227px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    @include m.mq(sp) {
+      flex-direction: column;
+    }
+  }
+
+  &-item {
+    background-color: #fff;
+    max-width: 32%;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    position: relative;
+    @include m.mq(sp) {
+      max-width: 100%;
+      margin-bottom: 30px;
+      &-item:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-txt {
+    padding: 14px 30px 35px 18px;
+    @include m.mq(sp) {
+      padding: 14px 30px 35px 14px;
+    }
+    h3 {
+      font-size: 1.8rem;
+      line-height: 1.4;
+      text-align: left;
+      font-weight: bold;
+    }
+    p {
+      display: block;
+      line-height: 1.6;
+      position: absolute;
+      bottom: 10px;
+      right: 32px;
+      font-weight: bold;
+    }
+  }
+}
+
+/*---------------------------
+work
+----------------------------*/
+.work {
+  background-color: #fff;
+  padding: 55px 0 90px;
+  @include m.mq(tab) {
+    padding: 60px 0 90px 0;
+  }
+  &-title {
+    margin-bottom: 68px;
+    font-size: 3.2rem;
+    text-align: center;
+    font-weight: bold;
+    @include m.mq(sp) {
+      margin-bottom: 35px;
+      font-size: 3rem;
+    }
+    span {
+      color: m.$sub-ttl-color;
+      display: block;
+      margin-top: 11px;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+  }
+
+  .swiper-container {
+    overflow-x: hidden;
+    width: 100%;
+    .swiper-slide {
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #DDDDDD;
+      @include m.mq(sp) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-txt {
+    padding: 18px 18px 40px;
+    @include m.mq(sp) {
+      padding: 18px;
+    }
+    h4 {
+      line-height: 1.5;
+      margin-bottom: 30px;
+      font-weight: bold;
+      @include m.mq(tab) {
+        line-height: 1.5;
+        margin-bottom: 30px;
+      }
+    }
+    p {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      font-weight: bold;
+      @include m.mq(tab) {
+        font-size: 1.4rem;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+/*---------------------------
+contact
+----------------------------*/
+#contact {
+  background: m.$gradient;
+  padding: 60px 20px 70px;
+  @include m.mq(tab) {
+    padding: 60px 20px 90px;
+  }
+  .contact-title {
+    margin-bottom: 36px;
+    font-size: 3.2rem;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    @include m.mq(sp) {
+      margin-bottom: 35px;
+      font-size: 3rem;
+    }
+    span {
+      color: #fff;
+      display: block;
+      margin-top: 7px;
+      margin-bottom: 36px;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      font-weight: bold;
+      @include m.mq(sp) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #fff;
+    margin-bottom: 44px;
+    text-align: center;
+    font-weight: bold;
+    @include m.mq(sp) {
+      font-size: 1.4rem;
+      margin-bottom: 35px;
+    }
+  }
+
+  .contact-inner {
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 35px 62px;
+    max-width: 908px;
+    margin-left: auto;
+    margin-right: auto;
+    @include m.mq(tab) {
+      padding: 35px;
+    }
+    @include m.mq(sp) {
+      padding: 30px 20px;
+      max-width: 100%;
+    }
+  }
+
+
+  .contact-form-part {
+    margin-bottom: 35px;
+    @include m.mq(sp) {
+      margin-bottom: 25px;
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 36px;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-weight: bold;
+    span {
+      padding: 5px 16px;
+      margin-left: 23px;
+      color: #FFF;
+      background: m.$contact-mandatory-color;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      font-weight: bold;
+    }  
+  }
+
+  input {
+    background: m.$bg-color;
+    border: none;
+    border-radius: 3px;
+    max-width: 499px;
+    width: 100%;
+    height: 43px;
+    @include m.mq(sp) {
+      width: 100%;
+    }
+    &[type="text"],
+    &[type="mail"] {
+      padding: 10px;
+    }
+
+    &[type="checkbox"] {
+      border: #707070;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    &[type="submit"] {
+      width: 155px;
+      height: 37px;
+      background: m.$btn-color;
+      color:#FFF;
+      border-radius: 10px;
+      display: block;
+      text-align: center;
+      line-height: 37px;
+      box-shadow: 0 3px 6px rgba(0,0,0,.16);
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 100%;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+  }
+
+  textarea {
+    padding: 10px;
+    background: m.$bg-color;
+    border: none;
+    border-radius: 3px;
+    max-width: 783px;
+    width: 100%;
+    // width: 86%;
+    height: 179px;
+    resize: none; 
+    margin-bottom: 30px;
+    font-weight: bold;
+    @include m.mq(sp) {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  }
+
+  .contact-checkbox {
+    text-align: center;
+    margin-bottom: 30px;
+    @include m.mq(sp) {
+      margin-bottom: 25px;
+    }
+    label {
+      line-height: 1.75;
+      font-size: 1.6rem;
+      display: inline;
+    }
+  }
+
+  .end-message {
+    display: none;
+    color: rgb(60, 136, 213);
+
+  }
+  
+  .false-message {
+    display: none;
+    color: rgb(244, 24, 68);
+  }
+}
+

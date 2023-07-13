@@ -1,0 +1,71 @@
+@use 'import' as m;
+/*---------------------------
+base
+-----------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+	padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+.contact-btn {
+  width: 155px;
+  height: 37px;
+  background: m.$btn-color;
+  color:#FFF;
+  border-radius: 10px;
+  display: block;
+  text-align: center;
+  line-height: 37px;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16);
+  font-weight: bold;
+  @include m.mq(sp) {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+}
+
+// ハンバーガーリセット
+
+::before , ::after {
+  box-sizing: inherit;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  vertical-align: middle;
+  text-align: inherit;
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}

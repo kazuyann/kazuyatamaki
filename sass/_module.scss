@@ -1,0 +1,231 @@
+// @use 'import';
+@use 'import' as m;
+
+/*------------------------
+header
+-------------------------*/
+.header {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 94px;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16);
+  @include m.mq(tab) {
+    height: 80px;
+  }
+}
+
+.header-inner {
+  max-width: 1022px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  @include m.mq(tab) {
+    padding: 20px;
+  }
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  img {
+    width: 47px;
+    height: 47px;
+    @include m.mq(tab) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.header-ttl {
+  font-size: 2.4rem;
+  line-height: 1.45;
+  padding-left: 16px;
+  font-weight: bold;
+  @include m.mq(sp) {
+    font-size: 2.2rem;
+  }
+}
+
+.menu {
+  display: flex;
+  li {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-right: 46px;
+    font-weight: bold;
+    a {
+      color: m.$txt-color;
+    }
+  }
+}
+
+.btn {
+  display: none;
+}
+
+@include m.mq(tab) {
+  .header-contact-btn {
+    display: none;
+  }
+}
+
+/*------------------------
+ハンバーガー
+-------------------------*/
+@include m.mq(tab) {
+  // ハンバーガーメニュー
+  .menu {
+    padding: 60px 20px;
+    position: fixed;
+    top: 0;      
+    right: -70%;
+    width: 70%;
+    height: 100vh; 
+    flex-direction: column;
+    background-color: rgba(54, 60, 70, 0.902);
+    transition: .3s;
+    li {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #fff;
+      font-size: 2rem;
+      margin-right: 0;
+      width: 100%;
+      a {
+        display: block;
+        padding: 10px;
+        color: #fff;
+        &:hover {
+          display: block;
+          background-color: rgba(255, 255, 255, .5);
+          color: #fff;
+          cursor: pointer;            
+          transition: .3s;
+        }
+      }
+    }
+  }
+
+  .menu.open {
+    position: absolute;
+    right: 0;
+  }
+
+  //ハンバーガーボタン
+  .btn {
+    display: block; 
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    /* 最前面に */
+    z-index: 10000;  /* z-index: 10; */
+  }
+
+  // バーガー線 
+  .btn-line {
+    display: block;
+    position: relative; 
+    width: 100%; 
+    height: 4px;
+    background-color: #333; 
+    transition: .2s;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #333;
+      transition: .5s;
+    }
+
+    &::before {
+      transform: translateY(-16px);
+    }
+
+    &::after {
+      transform: translateY(16px);
+    }
+
+    // ハンバーガーメニューオープン時
+    &.open {
+      background-color: transparent;   
+      &::before,
+      &::after {
+        content: "";
+        background-color: #fff;  
+        transition: .2s;
+      }
+
+      &::before {
+        transform: rotate(45deg);  
+      }
+
+      &::after {
+        transform: rotate(-45deg);  
+      }
+    } 
+  }
+}
+
+/*-----------------------
+footer
+-------------------------*/
+.footer {
+  background-color: m.$faq-bg-color;
+  padding: 43px 20px 49px;
+  text-align: center;
+  @include m.mq(sp) {
+    padding: 40px 20px;
+  }
+  
+  &-info {
+    padding-bottom: 52px;
+    @include m.mq(sp) {
+      padding-bottom: 25px;
+    }
+  }
+ 
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    padding-bottom: 21px;
+    font-weight: bold;
+    @include m.mq(sp) {
+      font-size: 2.2rem;
+      padding-bottom: 10px;
+    }
+  }
+
+  a {
+    color: #333333;
+    font-size: 1.6rem;
+    line-height: 1.75;
+    padding-right: 29px;
+    font-weight: bold;
+    @include m.mq(sp) {
+      font-size: 1.4rem;
+      padding-right: 20px;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+  
+  small {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    @include m.mq(sp) {
+      font-size: 1.2rem;
+    }
+  }
+}
